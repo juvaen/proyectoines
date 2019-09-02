@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneAltaEmpleadoController">
+   <children>
+      <Label layoutX="58.0" layoutY="65.0" text="Nombre" />
+      <TextField fx:id="txtNombre" layoutX="146.0" layoutY="61.0" />
+      <Button layoutX="510.0" layoutY="345.0" mnemonicParsing="false" onAction="#altaEmpleado" text="Registrar" />
+      <TextField fx:id="txtfecha" layoutX="146.0" layoutY="119.0" />
+      <TextField fx:id="txtServicio" layoutX="409.0" layoutY="175.0" />
+      <TextField fx:id="txtSucursal" layoutX="409.0" layoutY="119.0" />
+      <TextField fx:id="txtCompania" layoutX="409.0" layoutY="61.0" />
+      <Label layoutX="14.0" layoutY="119.0" prefHeight="25.0" prefWidth="132.0" text="Fecha de Contratacion" />
+      <Label layoutX="338.0" layoutY="65.0" text="Compañia" />
+      <Label layoutX="338.0" layoutY="123.0" text="Sucursal" />
+      <Label layoutX="338.0" layoutY="179.0" text="Servicio" />
+   </children>
+</AnchorPane>
