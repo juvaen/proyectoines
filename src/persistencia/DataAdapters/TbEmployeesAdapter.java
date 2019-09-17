@@ -30,7 +30,7 @@ public class TbEmployeesAdapter {
 
         try {
             PreparedStatement verificarStmt
-                    = c.prepareStatement("SELECT employee_id,employee_name, payment_company, branch, service FROM employees");
+                    = c.prepareStatement("SELECT employee_id,employee_name, payment_company, branch, service FROM Employees");
             ResultSet rs = verificarStmt.executeQuery();
 
             while (rs.next()) {
@@ -52,7 +52,7 @@ public class TbEmployeesAdapter {
 
     public void altaEmpleado(Empleado empleado) {
         try {
-            String query = "insert into employees (employee_name,payment_company, branch, service) values (?,?,?,?)";
+            String query = "insert into Employees (employee_name,payment_company, branch, service) values (?,?,?,?)";
             PreparedStatement preparedStmt = c.prepareStatement(query);
 
             preparedStmt.setString(1, empleado.getNombre());
@@ -69,7 +69,7 @@ public class TbEmployeesAdapter {
     public Empleado buscarEmpleado(String id) {
         try {
             PreparedStatement verificarStmt
-                    = c.prepareStatement("SELECT employee_id, employee_name, payment_company, branch, service FROM employees WHERE employee_id = ?");
+                    = c.prepareStatement("SELECT employee_id, employee_name, payment_company, branch, service FROM Employees WHERE employee_id = ?");
             verificarStmt.setInt(1, Integer.parseInt(id));
             ResultSet rs = verificarStmt.executeQuery();
 
@@ -92,7 +92,7 @@ public class TbEmployeesAdapter {
     public void borrarEmpleado(String id) {
         try {
             PreparedStatement verificarStmt
-                    = c.prepareStatement("DELETE FROM employees WHERE employee_id = ?");
+                    = c.prepareStatement("DELETE FROM Employees WHERE employee_id = ?");
             verificarStmt.setInt(1, Integer.parseInt(id));
             verificarStmt.execute();
         } catch (SQLException e) {
@@ -102,7 +102,7 @@ public class TbEmployeesAdapter {
 
     public void actualizarEmpleado(Empleado empleado) {
         try {
-            String query = "UPDATE employees SET employee_name = ? ,payment_company= ?, branch=?, service=? WHERE employee_id=?";
+            String query = "UPDATE Employees SET employee_name = ? ,payment_company= ?, branch=?, service=? WHERE employee_id=?";
             PreparedStatement preparedStmt = c.prepareStatement(query);
 
             preparedStmt.setString(1, empleado.getNombre());

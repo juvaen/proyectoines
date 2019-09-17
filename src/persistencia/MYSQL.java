@@ -23,7 +23,7 @@ public class MYSQL {
             String ruta = "jdbc:mysql://";
             String servidor = "localhost" + "/";
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(ruta.concat(servidor).concat("registroempleados").concat("?autoReconnect=true&useSSL=false"), "root", "admin");
+            con = DriverManager.getConnection(ruta.concat(servidor).concat("registroEmpleados").concat("?autoReconnect=true&useSSL=false"), "root", "244466666");
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MYSQL.class.getName()).log(Level.SEVERE, null, ex);
