@@ -41,6 +41,9 @@
                 <Tab text="Alta">
                     <fx:include source="sceneAltaEmpleado.fxml" />
                 </Tab>
+                <Tab fx:id="txtOtras" text="Otras">
+                    <fx:include source="sceneBorrar.fxml" />
+                </Tab>
               </tabs>
             </TabPane>
          </center>

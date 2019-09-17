@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -25,6 +26,8 @@ import persistencia.DataAdapters.TbEmployeesAdapter;
 public class SceneIndexController implements Initializable {
 
     TbEmployeesAdapter tbEmpleados = new TbEmployeesAdapter();
+
+    private ObservableList<Empleado> empleadosModels = FXCollections.observableArrayList(tbEmpleados.select());
 
     @FXML
     private ResourceBundle resources;
@@ -54,6 +57,12 @@ public class SceneIndexController implements Initializable {
     private TableColumn<Empleado, String> colServicio;
 
     @FXML
+    void btnActualizar(ActionEvent event) {
+        empleadosModels = FXCollections.observableArrayList(tbEmpleados.select());
+        tbData.setItems(empleadosModels);
+    }
+
+    @FXML
     void initialize() {
         assert tbData != null : "fx:id=\"tbData\" was not injected: check your FXML file 'sceneIndex.fxml'.";
         assert colId != null : "fx:id=\"colId\" was not injected: check your FXML file 'sceneIndex.fxml'.";
@@ -79,7 +88,5 @@ public class SceneIndexController implements Initializable {
 
         tbData.setItems(empleadosModels);
     }
-
-    private ObservableList<Empleado> empleadosModels = FXCollections.observableArrayList(tbEmpleados.select());
 
 }
