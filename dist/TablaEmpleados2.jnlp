@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="TablaEmpleados2.jar" size="10995" download="eager" />
+    <jar href="TablaEmpleados2.jar" size="14012" download="eager" />
     <jar href="lib\charm-glisten-4.4.1.jar" size="1040787" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.47.jar" size="1007502" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.17.jar" size="2321813" download="eager" />
