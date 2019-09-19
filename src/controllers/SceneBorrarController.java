@@ -18,6 +18,9 @@ import persistencia.DataAdapters.TbEmployeesAdapter;
  *
  * @author maslu
  */
+// ************************************************************************
+// Estos maneja botones de borrar y editar un Empleado.
+// ************************************************************************
 public class SceneBorrarController {
 
     @FXML

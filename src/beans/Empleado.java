@@ -14,12 +14,14 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Empleado {
 
+    // Identificador del empleado, este valor es único por empleado
     private SimpleIntegerProperty id;
     private SimpleStringProperty nombre;
     private SimpleStringProperty compania;
     private SimpleStringProperty servicio;
     private SimpleStringProperty sucursal;
 
+    // Constructor de la clase Empleado
     public Empleado(Integer id, String nombre, String compania, String servicio, String sucursal) {
         this.id = new SimpleIntegerProperty(id);
         this.nombre = new SimpleStringProperty(nombre);
@@ -35,6 +37,9 @@ public class Empleado {
         this.sucursal = new SimpleStringProperty(sucursal);
     }
 
+    // ************************************************************************
+    // Métodos para obtener y definir el identificador de la instancia
+    // ************************************************************************
     public int getId() {
         return id.get();
     }
@@ -43,6 +48,9 @@ public class Empleado {
         this.id = new SimpleIntegerProperty(id);
     }
 
+    // ************************************************************************
+    // Métodos para obtener y definir el identificador de la instancia
+    // ************************************************************************
     public String getNombre() {
         return nombre.get();
     }
@@ -51,6 +59,9 @@ public class Empleado {
         this.nombre = new SimpleStringProperty(nombre);
     }
 
+    // ************************************************************************
+    // Métodos para obtener y definir la compañía de la instancia
+    // ************************************************************************
     public String getCompania() {
         return compania.get();
     }
@@ -59,6 +70,9 @@ public class Empleado {
         this.compania = new SimpleStringProperty(compania);
     }
 
+    // ************************************************************************
+    // Métodos para obtener y definir el servicio de la instancia
+    // ************************************************************************
     public String getServicio() {
         return servicio.get();
     }
@@ -67,6 +81,9 @@ public class Empleado {
         this.servicio = new SimpleStringProperty(servicio);
     }
 
+    // ************************************************************************
+    // Métodos para obtener y definir la sucursal de la instancia
+    // ************************************************************************
     public String getSucursal() {
         return sucursal.get();
     }

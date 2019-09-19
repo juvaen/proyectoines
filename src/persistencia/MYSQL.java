@@ -14,6 +14,9 @@ import java.util.logging.Logger;
  *
  * @author maslu
  */
+// ************************************************************************
+// Esto crea la conexión a la base de datos
+// ************************************************************************
 public class MYSQL {
 
     Connection con = null;

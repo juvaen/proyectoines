@@ -25,6 +25,9 @@ public class TbEmployeesAdapter {
     MYSQL con = new MYSQL();
     Connection c = con.getConnection();
 
+    // ************************************************************************
+    // Hacer un listado de los empleados. READ
+    // ************************************************************************
     public List<Empleado> select() {
         List<Empleado> lsEmpleado = new ArrayList<>();
 
@@ -50,6 +53,9 @@ public class TbEmployeesAdapter {
         return null;
     }
 
+    // ************************************************************************
+    // Agregar empleado a la base de datos. CREATE
+    // ************************************************************************
     public void altaEmpleado(Empleado empleado) {
         try {
             String query = "insert into employees (employee_name,payment_company, branch, service) values (?,?,?,?)";
@@ -66,6 +72,9 @@ public class TbEmployeesAdapter {
         }
     }
 
+    // ************************************************************************
+    // BUuscar empleado en la base de datos.
+    // ************************************************************************
     public Empleado buscarEmpleado(String id) {
         try {
             PreparedStatement verificarStmt
@@ -89,17 +98,9 @@ public class TbEmployeesAdapter {
         return null;
     }
 
-    public void borrarEmpleado(String id) {
-        try {
-            PreparedStatement verificarStmt
-                    = c.prepareStatement("DELETE FROM employees WHERE employee_id = ?");
-            verificarStmt.setInt(1, Integer.parseInt(id));
-            verificarStmt.execute();
-        } catch (SQLException e) {
-            Logger.getLogger(TbEmployeesAdapter.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-
+    // ************************************************************************
+    // Editar empleado en la base de datos. UPDATE
+    // ************************************************************************
     public void actualizarEmpleado(Empleado empleado) {
         try {
             String query = "UPDATE employees SET employee_name = ? ,payment_company= ?, branch=?, service=? WHERE employee_id=?";
@@ -117,5 +118,20 @@ public class TbEmployeesAdapter {
         }
 
     }
+
+    // ************************************************************************
+    // Borrar empleado de la base de datos. DELETE
+    // ************************************************************************
+    public void borrarEmpleado(String id) {
+        try {
+            PreparedStatement verificarStmt
+                    = c.prepareStatement("DELETE FROM employees WHERE employee_id = ?");
+            verificarStmt.setInt(1, Integer.parseInt(id));
+            verificarStmt.execute();
+        } catch (SQLException e) {
+            Logger.getLogger(TbEmployeesAdapter.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
 
 }
